@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 48 67% 92%;
+    --foreground: 30 11% 7%;
+    --card: 0 0% 100%;
+    --card-foreground: 30 11% 7%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 11% 7%;
+    --primary: 40 78% 51%;
+    --primary-foreground: 30 11% 7%;
+    --secondary: 30 11% 7%;
+    --secondary-foreground: 48 67% 92%;
+    --muted: 40 30% 90%;
+    --muted-foreground: 0 0% 36%;
+    --accent: 40 78% 51%;
+    --accent-foreground: 30 11% 7%;
+    --destructive: 0 72% 43%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 40 30% 85%;
+    --input: 40 30% 85%;
+    --ring: 40 78% 51%;
+    --radius: 0.625rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-[#fbf5dc] text-[#13120f] antialiased;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: 'Great Vibes', cursive;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-[#e39a22] to-[#f4c430] bg-clip-text text-transparent;
+  }
+  
+  .btn-primary {
+    @apply bg-[#e39a22] text-[#13120f] hover:bg-[#e39a22]/90 transition-all duration-200;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:shadow-[#e39a22]/10 hover:border-[#e39a22]/50;
+  }
+  
+  .glass-effect {
+    @apply bg-white/80 backdrop-blur-md;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 3s ease-in-out infinite;
+  }
+  
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fbf5dc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e39a22;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d18b1a;
+}
+
+/* Selection color */
+::selection {
+  background: #e39a22;
+  color: #13120f;
+}
