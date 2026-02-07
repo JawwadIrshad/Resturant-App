@@ -7,8 +7,7 @@ import {
   MessageCircle, 
   X, 
   Send, 
-  Bot, 
-  User,
+  Bot,
   Minimize2,
   Maximize2
 } from 'lucide-react';
@@ -55,10 +54,6 @@ export default function Chatbot() {
       e.preventDefault();
       handleSend();
     }
-  };
-
-  const handleSuggestionClick = (suggestion: string) => {
-    sendMessage(suggestion);
   };
 
   if (!isOpen) {
